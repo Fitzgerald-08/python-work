@@ -12,7 +12,7 @@ for name, languages in favorite_languages.items():
             print(f"\t{language.title()}")
     else:
         print(f"\n{name.title()}'s favorite language is:")
-        for language in languages:  # <---- (1) Remove this and follow the instructions below to see what happens
+        for language in languages:  # <---- (1) Remove this and follow the instructions below
             # (2) When working with lists, it is strictly necessary to use a for loop to "loop" through that list,
             # if you try to print a value by itself as in the code below, it will show an error
 

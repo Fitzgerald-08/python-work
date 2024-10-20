@@ -1,5 +1,4 @@
-alien_0 = {"color": "green", "speed": "slow"}
+alien_0 = {"color": "green", "speed": "slow", "points": 5}
 
-# The get() method is used in case the key you are asking does not exist
-point_value = alien_0.get("points", "No point value assigned.")
+point_value = alien_0.get("points", "No point value assigned")
 print(point_value)

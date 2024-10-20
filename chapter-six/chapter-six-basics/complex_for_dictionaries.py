@@ -41,3 +41,6 @@ user_3 = {
 
 user_list = [user_0, user_1, user_2, user_3]
 
+for user in user_list:
+    for key in user:
+        print(key)
