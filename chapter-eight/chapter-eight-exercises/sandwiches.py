@@ -13,20 +13,21 @@ def modify_ingredients(value):
         if answer == "r":
             remove_prompt = "Select ingredient to remove: "
             remove_ingredient = ""
-            while remove_ingredient != "q":
+            remove_flag = True
+            while remove_flag:
                 remove_ingredient = input(remove_prompt)
-                if remove_ingredient not in ingredient_list and remove_ingredient != "q":
-                    remove_active = True
-                    while remove_active:
-                        print(ingredient_list)
-                        print("Sorry, there's no such ingredient")
-                        remove_ingredient = input(remove_prompt)
-                    if remove_ingredient in ingredient_list:
-                        ingredient_list.remove(remove_ingredient)
-                elif remove_ingredient == "q":
-                    exit()
+
+                if remove_ingredient == "q":
+                    remove_flag = False
+
                 elif remove_ingredient in ingredient_list:
                     ingredient_list.remove(remove_ingredient)
+                else:
+                    while remove_ingredient not in ingredient_list:
+                        print("Sorry, there's no such ingredient")
+                        remove_ingredient = input(remove_prompt)
+                        if remove_flag in ingredient_list:
+                            ingredient_list.remove(remove_ingredient)
 
         elif answer == "a":
             print()
@@ -79,4 +80,6 @@ while modify_list not in possible_answers:
     if modify_list in possible_answers:
         final_list = modify_ingredients(modify_list)
 
-print(final_list)
+print("Got it, your order with the following ingredients will shortly come out:")
+for ingredient in ingredient_list:
+    print(f"- {ingredient}")
