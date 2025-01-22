@@ -133,6 +133,9 @@ while order != "q":
     else:
         print(f"Sorry, we do not serve {order.title()}, or there's a typo in your order")
 
+
+arrange_values(coffee_ordered, coffee_size, coffee_price)
+# Print results in order to make sure everything works fine... for now
 for coffee in coffee_ordered:
     print(coffee.title())
 
